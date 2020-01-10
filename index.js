@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 const fs = require('fs');
 const Discord = require('discord.js');
 const { prefix } = require('./config.json');
@@ -62,17 +63,6 @@ client.on('message', message => {
 
 	timestamps.set(message.author.id, now);
 	setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
-    
-    // if (!client.commands.has(commandName)) return;
-
-	client.on('guildMemberAdd', member => {
-		// Send the message to a designated channel on a server:
-		const channel = member.guild.channels.find(ch => ch.name === 'introductions');
-		// Do nothing if the channel wasn't found on this server
-		if (!channel) return;
-		// Send the message, mentioning the member
-		channel.send(`Welcome to the server, ${member}, say howdy!\nGive yourself some roles so we know a bit about ya!\n\n\`!role student\` for current students, \`!role prospective\` for prospective or incoming students, \`!role alumni\` for alumni\n\n\`!rank gc\` for Grand Champion through \`!rank d1\` for Diamond 1`);
-	});
 
     try {
         command.execute(message, args);
@@ -80,6 +70,27 @@ client.on('message', message => {
         console.error(error);
         message.reply('there was an error trying to execute that command!');
     }
+});
+
+client.on('guildMemberAdd', member => {
+	// Send the message to a designated channel on a server:
+	const channel = member.guild.channels.find(ch => ch.name === 'introductions');
+	// Do nothing if the channel wasn't found on this server
+	if (!channel) return;
+	// Send the message, mentioning the member
+	channel.send(`Welcome to the server, ${member}, say howdy!`);
+
+	const welcomeEmbed = new Discord.RichEmbed()
+			.setColor('#C8102E')
+			.setTitle('Welcome to ISURL!')
+			.setDescription('Home to Iowa State\'s top Rocket League players!')
+			.setThumbnail('https://cdn.discordapp.com/attachments/348232481729806347/553349688611307647/ISUrlBoostLogo.png')
+			.addField('Introduce yourself!', 'Below are two roles that you can add so we can know more about you!')
+			.addField('\`!role <status>\`\nfor student status:', '\`student\`, \`alumni\`, \`prospective\`')
+			.addField('\`!rank <RLrank>\`\nfor your Rocket League rank:', '\`gc\`, \`c3\`, \`c2\`, \`c1\`, \`d3\`, \`d2\`, \`d1\`, \`plat\`, \`gold\`, \`silver\`, \`bronze\`', true)
+			.setFooter('If you need anything or have any questions, message @marcin#8250');
+
+	channel.send(welcomeEmbed);
 });
 
 client.login(process.env.DISCORDJS_TOKEN);
