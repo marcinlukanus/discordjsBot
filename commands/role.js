@@ -1,11 +1,14 @@
+/* eslint-disable no-useless-escape */
 module.exports = {
 	name: 'role',
 	description: 'Grants user with a role',
     guildOnly: true,
     cooldown: 5,
 	execute(message, args) {
+        const invalidRole = 'Please select a valid role: \`student\`, \`prospective\`, or \`alumni\`!';
+
 		if (!args[0]) {
-			return message.reply('you need to pick which role you want!');
+			return message.reply(invalidRole);
         }
         
         const name = args[0].toLowerCase();
@@ -18,8 +21,7 @@ module.exports = {
         } else if (name === 'alumni') {
             roleName = message.guild.roles.find(role => role.name === "Alumni");
         } else {
-            // eslint-disable-next-line no-useless-escape
-            return message.channel.send('Please select a valid role: \`student\`, \`prospective\`, or \`alumni\`!');
+            return message.channel.send(invalidRole);
         }
 
         message.member.addRole(roleName)
