@@ -67,11 +67,11 @@ client.on('message', message => {
 
 	client.on('guildMemberAdd', member => {
 		// Send the message to a designated channel on a server:
-		const channel = member.guild.channels.find(ch => ch.name === 'general');
+		const channel = member.guild.channels.find(ch => ch.name === 'introductions');
 		// Do nothing if the channel wasn't found on this server
 		if (!channel) return;
 		// Send the message, mentioning the member
-		channel.send(`Welcome to the server, ${member}\nGive yourself a role so we know who ya are!\n\`!role student\` for current students\n\`!role prospective\` for prospective or incoming students\n\`!role alumni\` for alumni`);
+		channel.send(`Welcome to the server, ${member}, say howdy!\nGive yourself some roles so we know a bit about ya!\n\n\`!role student\` for current students, \`!role prospective\` for prospective or incoming students, \`!role alumni\` for alumni\n\n\`!rank gc\` for Grand Champion through \`!rank d1\` for Diamond 1`);
 	});
 
     try {
