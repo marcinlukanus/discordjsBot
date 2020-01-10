@@ -65,6 +65,15 @@ client.on('message', message => {
     
     // if (!client.commands.has(commandName)) return;
 
+	client.on('guildMemberAdd', member => {
+		// Send the message to a designated channel on a server:
+		const channel = member.guild.channels.find(ch => ch.name === 'general');
+		// Do nothing if the channel wasn't found on this server
+		if (!channel) return;
+		// Send the message, mentioning the member
+		channel.send(`Welcome to the server, ${member}\nGive yourself a role so we know who ya are!\n\`!role student\` for current students\n\`!role prospective\` for prospective or incoming students\n\`!role alumni\` for alumni`);
+	});
+
     try {
         command.execute(message, args);
     } catch (error) {
