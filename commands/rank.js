@@ -3,9 +3,9 @@ module.exports = {
 	name: 'rank',
 	description: 'Grants user with their RL rank',
     guildOnly: true,
-    cooldown: 5,
+    cooldown: 2,
 	execute(message, args) {
-        const invalidRank = 'Please select a valid rank: \`gc\`, \`c3\`, \`c2\`, \`c1\`, \`d3\`, \`d2\`, or \`d1\`!';
+        const invalidRank = 'Please select a valid rank: \`gc\`, \`c3\`, \`c2\`, \`c1\`, \`d3\`, \`d2\`, \`d1\`, \`plat\`, \`gold\`, \`silver\`, or \`bronze\`!';
 
 		if (!args[0]) {
 			return message.reply(invalidRank);
@@ -28,6 +28,14 @@ module.exports = {
             roleName = message.guild.roles.find(role => role.name === "Diamond 2");
         } else if (name === 'd1') {
             roleName = message.guild.roles.find(role => role.name === "Diamond 1");
+        } else if (name === 'plat') {
+            roleName = message.guild.roles.find(role => role.name === "Platinum");
+        } else if (name === 'gold') {
+            roleName = message.guild.roles.find(role => role.name === "Gold");
+        } else if (name === 'silver') {
+            roleName = message.guild.roles.find(role => role.name === "Silver");
+        } else if (name === 'bronze') {
+            roleName = message.guild.roles.find(role => role.name === "Bronze");
         } else {
             // eslint-disable-next-line no-useless-escape
             return message.channel.send(invalidRank);
