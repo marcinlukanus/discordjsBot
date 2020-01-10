@@ -6,4 +6,4 @@ This is a bot for the Discord platform that will assist me with managing one of 
 This bot welcomes new users to my Discord server and provides a RichEmbed message to encourage users to add additional roles who request them via two commands, `!rank` and `!role`.
 
 ## Future Features
-I would like to add some additional functionality such as performing commands with API calls to third parties
+I would like to add some additional functionality such as performing commands with API calls to third parties.
