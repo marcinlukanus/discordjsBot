@@ -5,7 +5,7 @@ module.exports = {
     guildOnly: true,
     cooldown: 5,
 	execute(message, args) {
-        const invalidRole = 'Please select a valid role: \`student\`, \`prospective\`, or \`alumni\`!';
+        const invalidRole = 'Please select a valid role in the format \`!role <status>\`: \`student\`, \`tryout\`, \`prospective\`, or \`alumni\`!';
 
 		if (!args[0]) {
 			return message.reply(invalidRole);
@@ -20,6 +20,8 @@ module.exports = {
             roleName = message.guild.roles.find(role => role.name === "Prospective Students");
         } else if (name === 'alumni') {
             roleName = message.guild.roles.find(role => role.name === "Alumni");
+        } else if (name === 'tryout') {
+            roleName = message.guild.roles.find(role => role.name === "Tryout Gang");
         } else {
             return message.channel.send(invalidRole);
         }
