@@ -5,7 +5,7 @@ module.exports = {
     guildOnly: true,
     cooldown: 2,
 	execute(message, args) {
-        const invalidRank = 'Please select a valid rank: \`gc\`, \`c3\`, \`c2\`, \`c1\`, \`d3\`, \`d2\`, \`d1\`, \`plat\`, \`gold\`, \`silver\`, or \`bronze\`!';
+        const invalidRank = 'please select a valid rank in the format \`!rank <RLRank>\`: \`gc\`, \`c3\`, \`c2\`, \`c1\`, \`d3\`, \`d2\`, \`d1\`, \`plat\`, \`gold\`, \`silver\`, or \`bronze\`!';
 
 		if (!args[0]) {
 			return message.reply(invalidRank);
