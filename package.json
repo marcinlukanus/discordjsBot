@@ -1,11 +1,24 @@
 {
-    "name": "marcindiscordjsbot",
-    "description": "Marcins discord.js bot",
-    "version": "1.0.0",
-    "engines": {
-      "node": "12.13.0"
-    },
-    "scripts": {
-        "start" : "node index.js"
-    }
+  "name": "discordjsBot",
+  "version": "1.0.0",
+  "description": "This is a bot for the Discord platform that will assist me with managing one of my Discord servers. I am creating it to automate some common processes as well as to gain experience working with a Javascript library.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcinlukanus/discordjsBot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marcinlukanus/discordjsBot/issues"
+  },
+  "homepage": "https://github.com/marcinlukanus/discordjsBot#readme",
+  "dependencies": {
+    "discord.js": "^11.5.1"
+  }
 }
