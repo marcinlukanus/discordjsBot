@@ -2,6 +2,6 @@
 module.exports = {
 	name: 'rlrank',
     description: 'rlrank',
-	execute(message) {
+	execute() {
 	},
 };
