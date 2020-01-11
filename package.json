@@ -1,0 +1,8 @@
+{
+    "name": "marcindiscordjsbot",
+    "description": "Marcin's discord.js bot",
+    "version": "1.0.0",
+    "engines": {
+      "node": "12.13.0"
+    }
+  }
