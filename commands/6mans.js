@@ -1,4 +1,6 @@
 /* eslint-disable no-useless-escape */
+import queue from '../index'
+
 module.exports = {
 	name: '6mans',
     description: 'Creates queue and randomly determines teams once queue reaches 6 players',

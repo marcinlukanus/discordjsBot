@@ -95,3 +95,5 @@ client.on('guildMemberAdd', member => {
 });
 
 client.login(process.env.DISCORDJS_TOKEN);
+
+export default queue;
