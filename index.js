@@ -1,5 +1,5 @@
 /* eslint-disable no-useless-escape */
-export { queue };
+// export { queue };
 
 const fs = require('fs');
 const Discord = require('discord.js');
