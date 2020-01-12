@@ -10,9 +10,6 @@ module.exports = {
             return message.channel.send('User not already in queue!');
         }
 
-        console.log('Queue: ' + queue);
-        console.log('Author: ' + message.author);
-
         queue.pop(message.author);
         message.channel.send(message.author + ' has left the queue! There are currently ' + queue.length + ' people in the queue.');
 	},
