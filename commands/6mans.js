@@ -7,11 +7,14 @@ module.exports = {
     aliases: ['q'],
 	execute(message) {
         // Check to make sure user isn't already in queue
-        if (userAlreadyInQueue(message.author.id)) {
+        if (userAlreadyInQueue(message.author)) {
             return message.channel.send('User already in queue!');
         }
 
-        queue.push(message.author.id);
+        console.log('Queue: ' + queue);
+        console.log('Author: ' + message.author);
+
+        queue.push(message.author);
         message.channel.send(message.author + ' has joined the queue!');
 
         if (queue.length != 6) {
@@ -43,9 +46,11 @@ function shuffle() {
 
 function userAlreadyInQueue(newUser) {
     queue.forEach(user => {
-        if (user === newUser) {
+        console.log('Compared ' + user.id + ' to ' + newUser.id);
+        if (user.id === newUser.id) {
             return true;
         }
+        
         return false;
     })
 }
