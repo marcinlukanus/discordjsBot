@@ -47,7 +47,7 @@ function shuffle() {
 function userAlreadyInQueue(newUser) {
     queue.forEach(user => {
         console.log('Compared ' + user.id + ' to ' + newUser.id);
-        if (user.id === newUser.id) {
+        if (user.id == newUser.id) {
             return true;
         }
         
