@@ -1,4 +1,6 @@
 /* eslint-disable no-useless-escape */
+export { queue };
+
 const fs = require('fs');
 const Discord = require('discord.js');
 const { prefix } = require('./config.json');
@@ -13,6 +15,7 @@ for (const file of commandFiles) {
     client.commands.set(command.name, command);
 }
 
+const queue = [];
 const cooldowns = new Discord.Collection();
 
 client.once('ready', () => {
