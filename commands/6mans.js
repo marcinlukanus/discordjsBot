@@ -7,43 +7,31 @@ module.exports = {
     aliases: ['q'],
 	execute(message) {
         // Check to make sure user isn't already in queue
-        if (userAlreadyInQueue(message.author)) {
+        if (userAlreadyInQueue(message.author.id)) {
             return message.channel.send('User already in queue!');
         }
 
-        queue.push(message.author);
+        queue.push(message.author.id);
         message.channel.send(message.author + ' has joined the queue!');
 
         if (queue.length != 6) {
             message.channel.send('There are currently ' + queue.length + ' people in the queue.')
         } else {
-            const teams = randomizeTeams();
+            randomizeTeams();
 
-            message.channel.send('Blue team: ' + teams.blue[0] + ', ' + teams.blue[1] + ', ' + teams.blue[2]);
-            message.channel.send('Orange team: ' + teams.orange[0] + ', ' + teams.orange[1] + ', ' + teams.orange[2]);
+            message.channel.send('Blue team: ' + queue[0] + ', ' + queue[1] + ', ' + queue[2]);
+            message.channel.send('Orange team: ' + queue[3] + ', ' + queue[4] + ', ' + queue[5]);
 
             // Empty queue once teams are formed, users will need to rejoin queue afterwards
             queue = [];
         }
-
-		
 	},
 };
 
 function randomizeTeams() {
-    let blue, orange = [];
-
     for (let i = 0; i < 1000; i++) {
         shuffle();
     }
-
-    blue = queue.splice(0, 3);
-    orange = queue.splice(3, 6);
-
-    return {
-        blue: blue,
-        orange: orange
-    };
 }
 
 function shuffle() {
