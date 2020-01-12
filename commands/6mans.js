@@ -7,7 +7,7 @@ module.exports = {
     aliases: ['q'],
 	execute(message) {
         // Check to make sure user isn't already in queue
-        if (userAlreadyInQueue(message.author)) {
+        if (queue.includes(message.author)) {
             return message.channel.send('User already in queue!');
         }
 
@@ -42,15 +42,4 @@ function shuffle() {
         let j = Math.floor(Math.random() * (i + 1));
         [queue[i], queue[j]] = [queue[j], queue[i]];
       }
-}
-
-function userAlreadyInQueue(newUser) {
-    queue.forEach(user => {
-        console.log('Compared ' + user.id + ' to ' + newUser.id);
-        if (user.id == newUser.id) {
-            return true;
-        }
-        
-        return false;
-    })
 }
