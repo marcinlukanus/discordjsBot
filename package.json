@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/marcinlukanus/discordjsBot#readme",
   "dependencies": {
-    "discord.js": "^11.5.1"
+    "discord.js": "^11.5.1",
+    "esm": "^3.2.25"
   }
 }
