@@ -13,8 +13,10 @@ module.exports = {
         queue.push(message.author);
         message.channel.send(message.author + ' has joined the queue!');
 
-        if (queue.length != 6) {
-            message.channel.send('There are currently ' + queue.length + ' people in the queue.')
+        if (queue.length == 1) {
+            message.channel.send('There is currently ' + queue.length + ' person in the queue.');
+        } else if (queue.length != 6) {
+            message.channel.send('There are currently ' + queue.length + ' people in the queue.');
         } else {
             randomizeTeams();
 
