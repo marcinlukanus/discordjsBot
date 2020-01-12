@@ -13,7 +13,7 @@ for (const file of commandFiles) {
     client.commands.set(command.name, command);
 }
 
-const queue = [];
+let queue = [];
 const cooldowns = new Discord.Collection();
 
 client.once('ready', () => {
