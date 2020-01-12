@@ -1,18 +1,14 @@
-/* eslint-disable no-useless-escape */
 import queue from '../index'
 
 module.exports = {
 	name: '6mans',
     description: 'Creates queue and randomly determines teams once queue reaches 6 players',
-    aliases: ['q'],
+    aliases: ['q', 'queue'],
 	execute(message) {
         // Check to make sure user isn't already in queue
         if (queue.includes(message.author)) {
             return message.channel.send('User already in queue!');
         }
-
-        console.log('Queue: ' + queue);
-        console.log('Author: ' + message.author);
 
         queue.push(message.author);
         message.channel.send(message.author + ' has joined the queue!');
