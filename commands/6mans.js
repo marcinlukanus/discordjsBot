@@ -15,7 +15,7 @@ module.exports = {
 
         if (queue.length == 1) {
             message.channel.send('There is currently ' + queue.length + ' person in the queue.');
-        } else if (queue.length != 6) {
+        } else if (queue.length < 6) {
             message.channel.send('There are currently ' + queue.length + ' people in the queue.');
         } else {
             randomizeTeams();
