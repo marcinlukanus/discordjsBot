@@ -7,7 +7,10 @@ module.exports = {
 	execute(message, args) {
         //Display which users are in the queue, useful for debugging
         if (args[0] === 'members') {
-			return message.reply('Members in queue: ' + queue);
+            if (queue.length) {
+                return message.channel.send('Members in queue: ' + queue);
+            }
+            return message.channel.send('6mans queue is currently empty!');
         }
 
         // Check to make sure user isn't already in queue
