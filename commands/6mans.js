@@ -4,7 +4,12 @@ module.exports = {
 	name: '6mans',
     description: 'Creates queue and randomly determines teams once queue reaches 6 players',
     aliases: ['q', 'queue'],
-	execute(message) {
+	execute(message, args) {
+        //Display which users are in the queue, useful for debugging
+        if (args[0] === 'members') {
+			return message.reply('Members in queue: ' + queue);
+        }
+
         // Check to make sure user isn't already in queue
         if (queue.includes(message.author)) {
             return message.channel.send('User already in queue!');
