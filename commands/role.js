@@ -22,6 +22,8 @@ module.exports = {
             roleName = message.guild.roles.find(role => role.name === "Alumni");
         } else if (name === 'tryout') {
             roleName = message.guild.roles.find(role => role.name === "Tryout Gang");
+        } else if (name === '6mans') {
+            roleName = message.guild.roles.find(role => role.name === "6mans");
         } else {
             return message.channel.send(invalidRole);
         }
