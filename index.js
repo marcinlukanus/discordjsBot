@@ -13,7 +13,7 @@ for (const file of commandFiles) {
     client.commands.set(command.name, command);
 }
 
-global.queue = [];
+let queue = [];
 const cooldowns = new Discord.Collection();
 
 client.once('ready', () => {
@@ -97,4 +97,7 @@ client.on('guildMemberAdd', member => {
 
 client.login(process.env.DISCORDJS_TOKEN);
 
-export default queue;
+export let queue;
+export function resetQueue() {
+	queue = [];
+}
