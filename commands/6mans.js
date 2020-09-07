@@ -1,4 +1,4 @@
-import { queue, resetQueue } from '../index'
+import queue from '../index'
 
 module.exports = {
 	name: '6mans',
@@ -32,7 +32,9 @@ module.exports = {
             message.channel.send('Orange team: ' + queue[3] + ', ' + queue[4] + ', ' + queue[5]);
 
             // Empty queue once teams are formed, users will need to rejoin queue afterwards
-            resetQueue();
+            for (member in queue) {
+                queue.pop(member);
+            }
         }
 	},
 };
