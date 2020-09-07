@@ -97,7 +97,7 @@ client.on('guildMemberAdd', member => {
 
 client.login(process.env.DISCORDJS_TOKEN);
 
-export let queue;
+export default queue;
 export function resetQueue() {
 	queue = [];
 }
