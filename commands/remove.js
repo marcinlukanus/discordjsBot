@@ -44,6 +44,8 @@ module.exports = {
             roleName = message.guild.roles.find(role => role.name === "Silver");
         } else if (name === 'bronze') {
             roleName = message.guild.roles.find(role => role.name === "Bronze");
+        } else if (name === '6mans') {
+            roleName = message.guild.roles.find(role => role.name === "6mans");
         } else {
             // eslint-disable-next-line no-useless-escape
             return message.channel.send(invalidRoleOrRank);
