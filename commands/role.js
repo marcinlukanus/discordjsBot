@@ -20,8 +20,8 @@ module.exports = {
             roleName = message.guild.roles.find(role => role.name === "Prospective Students");
         } else if (name === 'alumni') {
             roleName = message.guild.roles.find(role => role.name === "Alumni");
-        } else if (name === 'tryout') {
-            roleName = message.guild.roles.find(role => role.name === "Tryout Gang");
+        } else if (name === 'imposter') {
+            roleName = message.guild.roles.find(role => role.name === "Imposter");
         } else if (name === '6mans') {
             roleName = message.guild.roles.find(role => role.name === "6mans");
         } else {
