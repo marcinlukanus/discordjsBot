@@ -14,3 +14,5 @@ module.exports = {
         message.channel.send(message.author + ' has left the queue! There are currently ' + queue.length + ' people in the queue.');
 	},
 };
+
+export default queue;

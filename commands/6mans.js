@@ -51,3 +51,5 @@ function shuffle() {
         [queue[i], queue[j]] = [queue[j], queue[i]];
       }
 }
+
+export default queue;
