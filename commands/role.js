@@ -5,7 +5,7 @@ module.exports = {
     guildOnly: true,
     cooldown: 5,
 	execute(message, args) {
-        const invalidRole = 'Please select a valid role in the format \`!role <status>\`: \`student\`, \`tryout\`, \`prospective\`, or \`alumni\`!';
+        const invalidRole = 'Please select a valid role in the format \`!role <status>\`: \`student\`, \`prospective\`, \`alumni\`, \`6mans\`, or \`imposter\`!';
 
 		if (!args[0]) {
 			return message.reply(invalidRole);
