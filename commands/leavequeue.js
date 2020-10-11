@@ -1,4 +1,4 @@
-import {queue} from '../index'
+import {queue, updateQueue} from '../index'
 
 module.exports = {
 	name: 'leavequeue',
@@ -10,7 +10,7 @@ module.exports = {
             return message.channel.send('User not already in queue!');
         }
 
-        queue = queue.filter(member => member !== message.author);
+        updateQueue(message.author);
         message.channel.send('User "hypothetically" removed: ' + message.author);
         message.channel.send(message.author + ' has left the queue! There are currently ' + queue.length + ' people in the queue.');
         message.channel.send('Users in queue: ' + queue);
