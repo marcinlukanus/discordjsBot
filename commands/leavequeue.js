@@ -11,10 +11,7 @@ module.exports = {
         }
 
         updateQueue(message.author);
-        message.channel.send('User "hypothetically" removed: ' + message.author);
         message.channel.send(message.author + ' has left the queue! There are currently ' + queue.length + ' people in the queue.');
-        message.channel.send('Users in queue: ' + queue);
-        console.log('Queue after user left: ' + queue);
 	},
 };
 
