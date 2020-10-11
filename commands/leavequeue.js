@@ -12,6 +12,7 @@ module.exports = {
 
         queue.pop(message.author);
         message.channel.send(message.author + ' has left the queue! There are currently ' + queue.length + ' people in the queue.');
+        message.channel.send('Users in queue: ' + queue);
         console.log('Queue after user left: ' + queue);
 	},
 };

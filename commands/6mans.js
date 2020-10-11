@@ -20,6 +20,7 @@ module.exports = {
 
         queue.push(message.author);
         message.channel.send(message.author + ' has joined the queue!');
+        message.channel.send('Users in queue: ' + queue);
         console.log('Queue after user joined: ' + queue);
 
         if (queue.length == 1) {
