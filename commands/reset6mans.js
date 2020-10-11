@@ -1,4 +1,4 @@
-import queue from '../index'
+import {queue} from '../index'
 
 module.exports = {
 	name: 'reset6mans',
@@ -12,3 +12,5 @@ module.exports = {
         message.channel.send(message.author + ' has reset the queue! There are currently ' + queue.length + ' people in the queue.');
 	},
 };
+
+export {queue};

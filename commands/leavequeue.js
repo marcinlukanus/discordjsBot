@@ -1,4 +1,4 @@
-import queue from '../index'
+import {queue} from '../index'
 
 module.exports = {
 	name: 'leavequeue',
@@ -12,7 +12,8 @@ module.exports = {
 
         queue.pop(message.author);
         message.channel.send(message.author + ' has left the queue! There are currently ' + queue.length + ' people in the queue.');
+        console.log('Queue after user left: ' + queue);
 	},
 };
 
-export default queue;
+export {queue};

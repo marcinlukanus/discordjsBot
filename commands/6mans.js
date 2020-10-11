@@ -1,4 +1,4 @@
-import queue from '../index'
+import {queue} from '../index'
 
 module.exports = {
 	name: '6mans',
@@ -20,6 +20,7 @@ module.exports = {
 
         queue.push(message.author);
         message.channel.send(message.author + ' has joined the queue!');
+        console.log('Queue after user joined: ' + queue);
 
         if (queue.length == 1) {
             message.channel.send('There is currently ' + queue.length + ' person in the queue.');
@@ -52,4 +53,4 @@ function shuffle() {
       }
 }
 
-export default queue;
+export {queue};
