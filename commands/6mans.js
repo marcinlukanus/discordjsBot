@@ -1,10 +1,10 @@
-import {queue} from '../index'
+import { queue } from '../index'
 
 module.exports = {
-	name: '6mans',
+    name: '6mans',
     description: 'Creates queue and randomly determines teams once queue reaches 6 players',
     aliases: ['q', 'queue'],
-	execute(message, args) {
+    execute(message, args) {
         //Display which users are in the queue, useful for debugging
         if (args[0] === 'members') {
             if (queue.length) {
@@ -36,7 +36,7 @@ module.exports = {
                 queue.pop();
             }
         }
-	},
+    },
 };
 
 function randomizeTeams() {
@@ -49,7 +49,7 @@ function shuffle() {
     for (let i = queue.length - 1; i > 0; i--) {
         let j = Math.floor(Math.random() * (i + 1));
         [queue[i], queue[j]] = [queue[j], queue[i]];
-      }
+    }
 }
 
-export {queue};
+export { queue };

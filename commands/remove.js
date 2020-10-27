@@ -1,16 +1,16 @@
 /* eslint-disable no-useless-escape */
 module.exports = {
-	name: 'remove',
-	description: 'Removes a user\'s role',
+    name: 'remove',
+    description: 'Removes a user\'s role',
     guildOnly: true,
     cooldown: 2,
-	execute(message, args) {
+    execute(message, args) {
         const invalidRoleOrRank = 'Please select a valid role in the format \`!remove <status>\`: \`student\`, \`tryout\`, \`prospective\`, \`alumni\`, or \`!remove <RLRank>\`: \`gc\`, \`c3\`, \`c2\`, \`c1\`, \`d3\`, \`d2\`, \`d1\`, \`plat\`, \`gold\`, \`silver\`, or \`bronze\`!';
 
-		if (!args[0]) {
-			return message.reply(invalidRoleOrRank);
+        if (!args[0]) {
+            return message.reply(invalidRoleOrRank);
         }
-        
+
         const name = args[0].toLowerCase();
         let roleName;
 
@@ -58,5 +58,5 @@ module.exports = {
             .catch(console.error);
 
         message.channel.send(`You have removed the \`${roleName.name}\` role!`);
-	},
+    },
 };

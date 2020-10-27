@@ -1,10 +1,10 @@
-import {queue, updateQueue} from '../index'
+import { queue, updateQueue } from '../index'
 
 module.exports = {
-	name: 'leavequeue',
+    name: 'leavequeue',
     description: 'Allows users to leave 6mans queue',
     aliases: ['l', 'leave'],
-	execute(message) {
+    execute(message) {
         // Check to make sure user is not in queue
         if (!queue.includes(message.author)) {
             return message.channel.send('User not already in queue!');
@@ -12,7 +12,7 @@ module.exports = {
 
         updateQueue(message.author);
         message.channel.send(message.author + ' has left the queue! There are currently ' + queue.length + ' people in the queue.');
-	},
+    },
 };
 
-export {queue};
+export { queue };

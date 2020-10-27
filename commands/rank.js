@@ -1,16 +1,16 @@
 /* eslint-disable no-useless-escape */
 module.exports = {
-	name: 'rank',
-	description: 'Grants user with their RL rank',
+    name: 'rank',
+    description: 'Grants user with their RL rank',
     guildOnly: true,
     cooldown: 2,
-	execute(message, args) {
+    execute(message, args) {
         const invalidRank = 'please select a valid rank in the format \`!rank <RLRank>\`: \`gc\`, \`c3\`, \`c2\`, \`c1\`, \`d3\`, \`d2\`, \`d1\`, \`plat\`, \`gold\`, \`silver\`, or \`bronze\`!';
 
-		if (!args[0]) {
-			return message.reply(invalidRank);
+        if (!args[0]) {
+            return message.reply(invalidRank);
         }
-        
+
         const name = args[0].toLowerCase();
         let roleName;
 
@@ -46,5 +46,5 @@ module.exports = {
             .catch(console.error);
 
         message.channel.send(`You have been given the \`${roleName.name}\` role!`);
-	},
+    },
 };
