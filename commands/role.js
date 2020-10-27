@@ -19,7 +19,15 @@ module.exports = {
         } else if (name === 'prospective') {
             roleName = message.guild.roles.find(role => role.name === "Prospective Students");
         } else if (name === 'alumni') {
-            roleName = message.guild.roles.find(role => role.name === "Alumni");
+            if (message.sender === "246801277873422338") {
+                return message.channel.send({embed: {
+                    image: {
+                        url: "https://giphy.com/embed/UK5AQccKV9OMg"
+                    }
+                }});
+            } else {
+                roleName = message.guild.roles.find(role => role.name === "Alumni");
+            }
         } else if (name === 'imposter') {
             roleName = message.guild.roles.find(role => role.name === "Imposter");
         } else if (name === '6mans') {
