@@ -89,7 +89,7 @@ client.on('guildMemberAdd', member => {
 		.addField('Introduce yourself!', 'Below are two roles that you can add so we can know more about you!')
 		.addField('\`!role <status>\`\nfor student status:', '\`student\`, \`alumni\`, \`prospective\`')
 		.addField('\`!role <status>\`\nfor additional roles:', '\`6mans\`, \`imposter\`')
-		.addField('\`!rank <RLrank>\`\nfor your Rocket League rank:', '\`gc\`, \`c3\`, \`c2\`, \`c1\`, \`d3\`, \`d2\`, \`d1\`, \`plat\`, \`gold\`, \`silver\`, \`bronze\`', true)
+		.addField('\`!rank <RLrank>\`\nfor your Rocket League rank:', '\`ssl\`, \`gc3\`, \`gc2\`, \`gc1\`, \`c3\`, \`c2\`, \`c1\`, \`d3\`, \`d2\`, \`d1\`, \`plat\`, \`gold\`, \`silver\`, \`bronze\`', true)
 		.setFooter('If you need anything or have any questions, message @marcin#8250');
 
 	channel.send(welcomeEmbed);
