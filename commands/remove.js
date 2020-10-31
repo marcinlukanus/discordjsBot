@@ -5,7 +5,7 @@ module.exports = {
     guildOnly: true,
     cooldown: 2,
     execute(message, args) {
-        const invalidRoleOrRank = 'Please select a valid role in the format \`!remove <status>\`: \`student\`, \`tryout\`, \`prospective\`, \`alumni\`, or \`!remove <RLRank>\`: \`gc\`, \`c3\`, \`c2\`, \`c1\`, \`d3\`, \`d2\`, \`d1\`, \`plat\`, \`gold\`, \`silver\`, or \`bronze\`!';
+        const invalidRoleOrRank = 'Please select a valid role in the format \`!remove <status>\`: \`student\`, \`tryout\`, \`prospective\`, \`alumni\`, or \`!remove <RLRank>\`: \`ssl\`, \`gc3\`, \`gc2\`, \`gc1\`, \`c3\`, \`c2\`, \`c1\`, \`d3\`, \`d2\`, \`d1\`, \`plat\`, \`gold\`, \`silver\`, or \`bronze\`!';
 
         if (!args[0]) {
             return message.reply(invalidRoleOrRank);
@@ -20,10 +20,14 @@ module.exports = {
             roleName = message.guild.roles.find(role => role.name === "Prospective Students");
         } else if (name === 'alumni') {
             roleName = message.guild.roles.find(role => role.name === "Alumni");
-        } else if (name === 'tryout') {
-            roleName = message.guild.roles.find(role => role.name === "Tryout Gang");
-        } else if (name === 'gc') {
-            roleName = message.guild.roles.find(role => role.name === "Grand Champion");
+        } else if (name === 'ssl') {
+            roleName = message.guild.roles.find(role => role.name === "Super Sonic Legend");
+        } else if (name === 'gc3') {
+            roleName = message.guild.roles.find(role => role.name === "Grand Champion 3");
+        } else if (name === 'gc2') {
+            roleName = message.guild.roles.find(role => role.name === "Grand Champion 2");
+        } else if (name === 'gc1') {
+            roleName = message.guild.roles.find(role => role.name === "Grand Champion 1");
         } else if (name === 'c3') {
             roleName = message.guild.roles.find(role => role.name === "Champion 3");
         } else if (name === 'c2') {
