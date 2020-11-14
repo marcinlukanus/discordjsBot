@@ -21,7 +21,7 @@ module.exports = {
         } else if (name === 'alumni') {
             roleName = message.guild.roles.find(role => role.name === "Alumni");
         } else if (name === 'ssl') {
-            roleName = message.guild.roles.find(role => role.name === "Super Sonic Legend");
+            roleName = message.guild.roles.find(role => role.name === "Supersonic Legend");
         } else if (name === 'gc3') {
             roleName = message.guild.roles.find(role => role.name === "Grand Champion 3");
         } else if (name === 'gc2') {
