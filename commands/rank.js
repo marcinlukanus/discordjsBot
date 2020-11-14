@@ -5,7 +5,7 @@ module.exports = {
     guildOnly: true,
     cooldown: 2,
     execute(message, args) {
-        const invalidRank = 'please select a valid rank in the format \`!rank <RLRank>\`: \`ssl\`, \`gc3\`, \`gc2\`, \`gc1\`, \`c3\`, \`c2\`, \`c1\`, \`d3\`, \`d2\`, \`d1\`, \`plat\`, \`gold\`, \`silver\`, or \`bronze\`!';
+        const invalidRank = 'Please select a valid rank in the format \`!rank <RLRank>\`: \`ssl\`, \`gc3\`, \`gc2\`, \`gc1\`, \`c3\`, \`c2\`, \`c1\`, \`d3\`, \`d2\`, \`d1\`, \`plat\`, \`gold\`, \`silver\`, or \`bronze\`!';
 
         if (!args[0]) {
             return message.reply(invalidRank);
@@ -15,7 +15,7 @@ module.exports = {
         let roleName;
 
         if (name === 'ssl') {
-            roleName = message.guild.roles.find(role => role.name === "Super Sonic Legend");
+            roleName = message.guild.roles.find(role => role.name === "Supersonic Legend");
         } else if (name === 'gc3') {
             roleName = message.guild.roles.find(role => role.name === "Grand Champion 3");
         } else if (name === 'gc2') {
